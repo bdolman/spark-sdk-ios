@@ -25,7 +25,8 @@ Pod::Spec.new do |s|
     s.source           = { :git => "https://github.com/spark/Spark-SDK-ios.git", :tag => s.version.to_s }
     s.social_media_url = 'https://twitter.com/particle'
 
-    s.platform     = :ios, '7.1'
+    s.ios.deployment_target = '7.1'
+    s.osx.deployment_target = '10.9'
     s.requires_arc = true
 
     s.public_header_files = 'Pod/Classes/*.h'
@@ -33,7 +34,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'Helpers' do |ss|
         ss.source_files = 'Pod/Classes/Helpers/*.{h,m}'
-        ss.ios.frameworks = 'SystemConfiguration', 'Security'
+        ss.frameworks = 'SystemConfiguration', 'Security'
     end
 
     s.subspec 'SDK' do |ss|
